@@ -1,4 +1,4 @@
-Simple API example with minimal functionality (EF, migrations error interception) for demo purposes
+Simple API example with minimal functionality (EF, migrations, error interception) for demo purposes
 
 The solution configured for local setup and to work with MS SQL
 
