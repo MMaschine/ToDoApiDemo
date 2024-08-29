@@ -1,0 +1,59 @@
+$completed-bg-color: #e6f4ea;
+$completed-border-color: #c2e0c6;
+$not-completed-bg-color: #fff;
+$not-completed-border-color: #ffd700;
+$completed-text-color: #28a745;
+$not-completed-text-color: #ff9900;
+
+.task-container {
+  padding: 16px;
+  margin-bottom: 16px;
+  border-radius: 8px;
+
+  // styles for completed tasks
+  &.completed {
+    background-color: $completed-bg-color; 
+    border: 1px solid $completed-border-color;
+  }
+
+  // styles for not completed tasks
+  &.not-completed {
+    background-color: $not-completed-bg-color; 
+    border: 1px solid $not-completed-border-color;
+  }
+
+  h1 {
+    font-size: 1.5em;
+    margin-bottom: 8px;
+    color: #333;
+  }
+
+  p {
+    margin: 4px 0;
+    font-size: 1em;
+    color: #555;
+
+    &.description {
+      margin-bottom: 20px;
+      font-style: italic;
+      color: #444;
+    }
+  }
+
+  .status {
+    display: flex;
+    align-items: center;
+
+    &.completed {
+      color: $completed-text-color;
+    }
+
+    &.not-completed {
+      color: $not-completed-text-color;
+    }
+
+    .status-icon {
+      margin-right: 8px;
+    }
+  }
+}
