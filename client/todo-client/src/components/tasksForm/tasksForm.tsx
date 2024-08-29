@@ -1,23 +1,28 @@
 import { ToDoTaskViewModel } from "../../models";
-import { TaskCard } from "../taskCard/taskCard";
+import { useState } from "react";
+import { TasksTable } from "../tasksTable/tasksTable";
+import { TasksList } from "../taskList/taskList";
+import { ViewToggle } from "../viewToggle/viewToggle";
 
 type Props = {
   tasks: ToDoTaskViewModel[];
 };
 
 export const TasksForm: React.FC<Props> = (props) => {
+  const [isTable, setIsTable] = useState(false);
+
+  const handleViewChange = (status: boolean) => {
+    setIsTable(status);
+  };
+
   return (
     <div>
-      {props.tasks.map((tsk: ToDoTaskViewModel) => (
-        <TaskCard
-          key={tsk.id}
-          id={tsk.id}
-          title={tsk.title}
-          description={tsk.description}
-          completeDueDate={tsk.completeDueDate}
-          isCompleted={tsk.isCompleted}
-        />
-      ))}
+      <ViewToggle isTable={isTable} onChange={handleViewChange} />
+      {isTable ? (
+        <TasksTable tasks={props.tasks} />
+      ) : (
+        <TasksList tasks={props.tasks} />
+      )}
     </div>
   );
 };

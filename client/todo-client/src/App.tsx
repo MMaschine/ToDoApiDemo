@@ -1,6 +1,7 @@
 import "./App.css";
 import { TasksForm } from "./components/tasksForm/tasksForm";
 import { useTasks } from "./hooks/useTasks";
+import taskSymbol from "./icons/taskSymbol.svg";
 
 function App() {
   const { data: tasks, status, error } = useTasks();
@@ -15,7 +16,9 @@ function App() {
 
   return (
     <div>
-      <h1>ToDo tasks demo</h1>
+      <h1>
+        {<img width={40} height={40} src={taskSymbol} alt="" />} ToDo Tasks
+      </h1>
       <TasksForm tasks={tasks ?? []} />
     </div>
   );
