@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using ToDoApp.DataAccess.Triggers;
 
 namespace ToDoApp.DataAccess.Extensions
 {
@@ -18,6 +19,11 @@ namespace ToDoApp.DataAccess.Extensions
             services.AddDbContext<ToDoContext>(options =>
             {
                 options.UseSqlServer(connectionString);
+                options.UseTriggers(triggerOptions =>
+                {
+                    triggerOptions.AddTrigger<SetToDoTaskCreatedDateTrigger>();
+                    triggerOptions.AddTrigger<SetToDoTaskModifiedDateTrigger>();
+                });
             });
         }
     }
