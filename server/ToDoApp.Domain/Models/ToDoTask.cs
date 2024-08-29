@@ -20,5 +20,9 @@ namespace ToDoApp.Domain.Models
         public int? AssignedUserId { get; set; }
 
         public User AssignedUser { get; set; }
+
+        public DateTime CreatedDate { get; set; }
+
+        public DateTime LastModifiedDate { get; set; }
     }
 }

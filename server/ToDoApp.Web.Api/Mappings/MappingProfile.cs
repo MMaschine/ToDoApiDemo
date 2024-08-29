@@ -17,6 +17,8 @@ namespace ToDoApp.Web.Api.Mappings
 
             CreateMap<UpsertToDoTaskDto, ToDoTask>()
                 .ForMember(dest => dest.Id, opt => opt.MapFrom(src => 0))
+                .ForMember(dest => dest.CreatedDate, opt => opt.MapFrom(src => DateTime.MinValue))
+                .ForMember(dest => dest.LastModifiedDate, opt => opt.MapFrom(src => DateTime.MinValue))
                 .ForMember(dest => dest.Priority, opt => opt.Ignore())
                 .ForMember(dest => dest.AssignedUser, opt => opt.Ignore())
                 .ForMember(dest => dest.AssignedUserId,
