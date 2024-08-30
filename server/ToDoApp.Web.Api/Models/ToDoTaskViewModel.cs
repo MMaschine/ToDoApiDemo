@@ -20,5 +20,9 @@ namespace ToDoApp.Web.Api.Models
         public PriorityLevel PriorityId { get; set; }
 
         public int AssignedUserId { get; set; }
+
+        public DateTime CreatedDate { get; set; }
+
+        public DateTime LastModifiedDate { get; set; }
     }
 }
