@@ -1,5 +1,7 @@
 Simple API example with minimal functionality (EF, migrations, error interception) for demo purposes
 
+Server:
+
 The solution is configured for local setup and to work with MS SQL
 
 - open in VS
@@ -8,4 +10,13 @@ The solution is configured for local setup and to work with MS SQL
 - Run the app in Debug mode to have access to Swagger UI
 
 Note: 
-To have access to in-design time migrations add your connection string also in DesignTimeDbContextFactory	in ToDoApp.DataAccess 
+To have access to in-design time migrations add your connection string also in DesignTimeDbContextFactory in ToDoApp.DataAccess 
+
+Client: 
+
+The simple client for observation of the list of ToDos was added. To run:
+ - be sure that .env file contains base Url to the API correlating with the server settings (default values for now)
+ - use "npm start" command  
+
+
+
