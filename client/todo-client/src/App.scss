@@ -13,8 +13,7 @@
   }
 }
 
-.error-message {
-  color: red;
+.message {
   font-size: 2em;
   font-weight: bold;
   text-align: center;
@@ -22,4 +21,14 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.message-error {
+  @extend .message;
+  color: red;
+}
+
+.message-loading {
+  @extend .message;
+  color: green;
 }

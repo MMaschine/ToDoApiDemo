@@ -10,15 +10,13 @@ $not-completed-text-color: #ff9900;
   margin-bottom: 16px;
   border-radius: 8px;
 
-  // styles for completed tasks
   &.completed {
-    background-color: $completed-bg-color; 
+    background-color: $completed-bg-color;
     border: 1px solid $completed-border-color;
   }
 
-  // styles for not completed tasks
   &.not-completed {
-    background-color: $not-completed-bg-color; 
+    background-color: $not-completed-bg-color;
     border: 1px solid $not-completed-border-color;
   }
 
@@ -53,7 +51,7 @@ $not-completed-text-color: #ff9900;
     }
 
     .status-icon {
-      margin-right: 8px;
+      margin-left: 5px;
     }
   }
 }

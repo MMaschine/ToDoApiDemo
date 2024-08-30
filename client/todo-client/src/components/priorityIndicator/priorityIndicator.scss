@@ -1,0 +1,38 @@
+.priority-indicator {
+  display: flex;
+  align-items: center;
+
+  .bar {
+    display: flex;
+    width: 60px;
+    height: 10px;
+    margin-right: 10px;
+
+    .segment {
+      flex: 1;
+      background-color: #ddd;
+      transition: background-color 0.3s ease;
+
+      &.filled {
+        background-color: inherit;
+      }
+
+      &.green.filled {
+        background-color: green;
+      }
+      &.yellow.filled {
+        background-color: yellow;
+      }
+      &.orange.filled {
+        background-color: orange;
+      }
+      &.red.filled {
+        background-color: red;
+      }
+    }
+  }
+
+  .label {
+    font-weight: bold;
+  }
+}

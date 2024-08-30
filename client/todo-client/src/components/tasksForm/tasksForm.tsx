@@ -1,8 +1,6 @@
 import { ToDoTaskViewModel } from "../../models";
 import { useState } from "react";
-import { TasksTable } from "../tasksTable/tasksTable";
-import { TasksList } from "../taskList/taskList";
-import { ViewToggle } from "../viewToggle/viewToggle";
+import { TasksTable, TasksList, ViewToggle } from "..";
 
 type Props = {
   tasks: ToDoTaskViewModel[];

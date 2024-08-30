@@ -1,12 +1,12 @@
-import dayjs from "dayjs";
-import { ToDoTaskViewModel } from "../../models/toDoTaskViewModel";
 import "./tasksTable.scss";
+import { ToDoTaskViewModel } from "../../models";
+import { formatDate } from "../../helpers";
 
 type Props = {
   tasks: ToDoTaskViewModel[];
 };
 
-export const TasksTable: React.FC<Props> = (props) => {
+export const TasksTable: React.FC<Props> = ({ tasks }) => {
   return (
     <table className="custom-table">
       <thead>
@@ -21,15 +21,15 @@ export const TasksTable: React.FC<Props> = (props) => {
         </tr>
       </thead>
       <tbody>
-        {props.tasks.map((task) => (
+        {tasks.map((task) => (
           <tr key={task.id}>
             <td>{task.title}</td>
             <td>{task.description}</td>
-            <td>{dayjs(task.completeDueDate).format("YYYY-MM-DD")}</td>
+            <td>{formatDate(task.completeDueDate)}</td>
             <td>{task.isCompleted ? "Completed" : "Not completed"}</td>
             <td>{task.priorityId}</td>
-            <td>{dayjs(task.createdDate).format("YYYY-MM-DD")}</td>
-            <td>{dayjs(task.lastModifiedDate).format("YYYY-MM-DD")}</td>
+            <td>{formatDate(task.createdDate)}</td>
+            <td>{formatDate(task.lastModifiedDate)}</td>
           </tr>
         ))}
       </tbody>

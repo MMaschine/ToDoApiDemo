@@ -6,10 +6,12 @@ import taskSymbol from "./icons/taskSymbol.svg";
 function App() {
   const { data: tasks, status, error } = useTasks();
 
-  if (status === "loading") return <div>Loading...</div>;
+  if (status === "loading")
+    return <div className="message-loading">Loading...</div>;
+
   if (status === "error")
     return (
-      <div className="error-message">
+      <div className="message-error">
         Error: {error instanceof Error ? error.message : "An error occurred"}
       </div>
     );

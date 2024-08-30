@@ -1,14 +1,14 @@
 import { ToDoTaskViewModel } from "../../models";
-import { TaskCard } from "../taskCard/taskCard";
+import { TaskCard } from "..";
 
 type Props = {
   tasks: ToDoTaskViewModel[];
 };
 
-export const TasksList: React.FC<Props> = (props) => {
+export const TasksList: React.FC<Props> = ({ tasks }) => {
   return (
     <div>
-      {props.tasks.map((tsk: ToDoTaskViewModel) => (
+      {tasks.map((tsk: ToDoTaskViewModel) => (
         <TaskCard
           key={tsk.id}
           id={tsk.id}
@@ -16,6 +16,7 @@ export const TasksList: React.FC<Props> = (props) => {
           description={tsk.description}
           completeDueDate={tsk.completeDueDate}
           isCompleted={tsk.isCompleted}
+          priorityId={tsk.priorityId}
         />
       ))}
     </div>
