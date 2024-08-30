@@ -30,6 +30,18 @@ builder.Services.AddScoped(typeof(IGenericDataSource<>), typeof(GenericDataSourc
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IToDoTaskService, ToDoTaskService>();
 
+// Add CORS policy
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAll",
+        policyBuilder =>
+        {
+            policyBuilder.AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader();
+        });
+});
+
 
 var app = builder.Build();
 
@@ -45,6 +57,8 @@ app.UseMiddleware<ErrorsInterceptor>();
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
+
+app.UseCors("AllowAll");
 
 app.MapControllers();
 

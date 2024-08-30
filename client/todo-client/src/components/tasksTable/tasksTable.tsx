@@ -16,6 +16,8 @@ export const TasksTable: React.FC<Props> = (props) => {
           <th>Complete before</th>
           <th>Status</th>
           <th>Priority</th>
+          <th>Created</th>
+          <th>Last modified</th>
         </tr>
       </thead>
       <tbody>
@@ -26,6 +28,8 @@ export const TasksTable: React.FC<Props> = (props) => {
             <td>{dayjs(task.completeDueDate).format("YYYY-MM-DD")}</td>
             <td>{task.isCompleted ? "Completed" : "Not completed"}</td>
             <td>{task.priorityId}</td>
+            <td>{dayjs(task.createdDate).format("YYYY-MM-DD")}</td>
+            <td>{dayjs(task.lastModifiedDate).format("YYYY-MM-DD")}</td>
           </tr>
         ))}
       </tbody>

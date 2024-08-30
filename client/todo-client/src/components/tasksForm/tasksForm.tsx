@@ -9,7 +9,7 @@ type Props = {
 };
 
 export const TasksForm: React.FC<Props> = (props) => {
-  const [isTable, setIsTable] = useState(false);
+  const [isTable, setIsTable] = useState(true);
 
   const handleViewChange = (status: boolean) => {
     setIsTable(status);
